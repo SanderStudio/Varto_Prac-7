@@ -6,7 +6,6 @@ public class Player : Person
 {
     public int ExpPoint { get; private set; } = 50;
 
-    [SerializeField] private int _expPoints = 50;
 
     public new void Start()
     {
@@ -15,16 +14,19 @@ public class Player : Person
         Debug.Log($"You name is {PersonName}");
         Debug.Log($"You have {ExpPoint} points");
 
-        Health = 60;
-
-        Debug.Log($"YOur new health is {Health}");
-
         ShowStat();
+        TakeDamage(50);
         Debug.Log("End Player class");
     }
     public override void ShowStat()
     {
         Debug.Log($"Your name is {PersonName} from Player class and you have {ExpPoint} Points");
+    }
+
+    public override void TakeDamage(int damageValue)
+    {
+        Health -= damageValue;
+        Debug.Log($"My name is {PersonName}: After hitting with {damageValue} force, I have {Health} health");
     }
 }
 
