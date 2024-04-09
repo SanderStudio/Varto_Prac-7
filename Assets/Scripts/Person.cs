@@ -28,24 +28,19 @@ public class Person : MonoBehaviour
     public void Start()
     {
         Debug.Log("Start Person class");
-        Debug.Log(Health);
-        Debug.Log($"{PersonName}");
+        Debug.Log($"Your health is {Health}");
+        Debug.Log($"Your name is {PersonName}");
 
         Health = 80;
 
-        Debug.Log(Health);
-        Debug.Log($"{PersonName}");
+        Debug.Log($"Your new health is {Health}");
 
-        Health = 200;
-
-        Debug.Log(Health);
-        Debug.Log($"{PersonName}");
-        //ShowStat();
+        ShowStat();
         Debug.Log("End Person class");
     }
 
-    //public virtual void ShowStat()
-    //{
-    //    Debug.Log($"Your name is {PersonName} from Person class");
-    //}
+    public virtual void ShowStat()
+    {
+        Debug.Log($"Your name is {PersonName} from Person class");
+    }
 }
